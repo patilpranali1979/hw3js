@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        count : <span id ="count" > a</span>
+    </p>
+    <button onclick="inc()"> Increment</button>
+    <button onclick="dec()"> decrement </button>
+    <button onclick="clearData()"> clear count </button>
+    <script>
+        let count =0
+        function inc() {
+            document.getElementById("count").textContent = count++
+        }
+        function dec() {
+            document.getElementById("count").textContent = count--
+            function countdata() {
+                count = 0;
+                document.getElementById("count").textContent =count
+            }
+        }
+    </script>
+</body>
+</html>

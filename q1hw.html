@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> product List</h3>
+    <input type="text" id="productInput" placeholder="Enter Product Name ">
+    <button onclick="addproduct()"> Add Product</button>
+    <ul id ="productList"></ul>
+    <script> 
+        function addproduct() {
+            let ProductName = document.getElementById("productInput").value;
+            if (ProductName == "") {
+                alert("plz enter product name ");
+                return;
+            }
+            let li = document.createElement("li");
+            li.textContent =ProductName;
+            document.getElementById("productList").appendChild(li);
+            let product = JSON.parse(localStorage.getItem("products")) || [];
+            product.push(ProductName);
+            localStorage.setItem("products",JSON.stringify(product));
+            document.getElementById("productInput").value="";
+        }
+    </script>
+</body>
+</html>

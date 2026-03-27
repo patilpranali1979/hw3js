@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> cart</h3>
+    <button id ="addToCart"> Add to cart </button>
+    <script> 
+        let count = localStorage.getItem("cardCount") || 0;
+        document.getElementById("addToCart") . addEventListener("click", function () {
+            count++;
+            localStorage.setItem("cartCount",count);
+            alert("item in cart :" +count);
+        });
+    </script>
+</body>
+</html>
